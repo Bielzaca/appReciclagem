@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="pagination(pagina)">
+  <nav th:if="${pagina != null and pagina.totalPages > 1}">
+    <ul class="pagination">
+      <li th:each="i : ${#numbers.sequence(0, pagina.totalPages - 1)}"
+          th:classappend="${i == pagina.number} ? 'active'">
+        <a th:href="@{|?page=${i}|}" th:text="${i + 1}"></a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</body>
+</html>
