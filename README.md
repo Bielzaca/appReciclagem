@@ -9,7 +9,7 @@
 EX:
 
 spring.datasource.url=jdbc:mysql://localhost:3306/NomeDoBanco?useSSL=false&serverTimezone=UTC
-spring.datasource.username=SeuUsuario
+spring.datasource.username=SeuUsuario <br>
 spring.datasource.password=SuaSenha
 
 5 - Rodar o arquivo principal AppReciclagemApplication.java localizado em /src/main/java/br/AppReciclagem/appReciclagem/
