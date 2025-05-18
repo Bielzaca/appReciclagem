@@ -384,13 +384,13 @@
                     <h5 class="mb-0">Excluir Usuário</h5>
                 </div>
                 <div class="card-body">
-                    <form method="post" id="formExcluir" >
+                    <form id="formExcluir" >
                         <div class="mb-3">
                             <label class="form-label">CPF ou ID do usuário</label>
                             <input name="cpfOuId" class="form-control" placeholder="Digite o CPF (11 dígitos) ou ID" id="cpfOuId" required>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button type="submit" class="btn btn-danger">
+                            <button type="button" id="btnExcluirUsuario" class="btn btn-danger">
                                 <i class="bi bi-trash-fill"></i> Excluir
                             </button>
                         </div>
@@ -742,6 +742,28 @@
             </div>
         </div>
 
+        <!-- Modal de Confirmação -->
+        <div class="modal fade" id="confirmacaoExclusaoModal" tabindex="-1" aria-labelledby="confirmacaoExclusaoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmacaoExclusaoModalLabel">Confirmar Exclusão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>A exclusão removerá permanentemente os dados, tem certeza que deseja excluir?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" id="confirmarExclusaoUsuario">Confirmar Exclusão</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
 
 
@@ -762,5 +784,6 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/js/forms.js"></script>
+<script src="/js/modal.js"></script>
 </body>
 </html>

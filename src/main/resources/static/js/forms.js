@@ -111,33 +111,7 @@
         });
     });
 
-    document.getElementById("formExcluir").addEventListener("submit", function(e) {
 
-            e.preventDefault();
-
-            const form = e.target;
-            const formData = new FormData(form);
-
-            fetch("/admin/usuario/excluir", {
-                method: "POST",
-                body: new URLSearchParams(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                const mensagemDiv = document.getElementById("mensagemExcluir");
-                if (data.status === "ok") {
-                    mensagemDiv.innerHTML = "<div class='alert alert-success'>Usuário excluido com sucesso!</div>";
-                    form.reset();
-                    mensagemDiv.hidden = false;
-                } else {
-                    mensagemDiv.innerHTML = `<div class='alert alert-danger'>${data.mensagem}</div>`;
-                }
-                mensagemDiv.scrollIntoView({ behavior: 'smooth' });
-            })
-            .catch(error => {
-                console.error("Erro ao excluir:", error);
-            });
-        });
 
     document.getElementById("formEntregaMaterial").addEventListener("submit", function(e) {
         e.preventDefault();
