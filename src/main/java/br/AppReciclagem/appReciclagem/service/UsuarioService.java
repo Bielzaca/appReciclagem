@@ -95,6 +95,9 @@ public class UsuarioService {
        return "ok";
     }
     public String validaExclusao (String cpfOuId){
+        if(cpfOuId.trim().equals("1")){
+            return "Não é possível excluir o usuário administrador";
+        }
         if(usuarioRepository.findByCpf(cpfOuId).isEmpty()){
             if(usuarioRepository.findById(Long.parseLong(String.valueOf(cpfOuId))).isEmpty()){
                 return "Usuário não encontrado";
